@@ -15,6 +15,7 @@ const emptyData: GitHubData = {
   topLanguages: [],
   repositories: [],
   contributions: [],
+  yearlyContributions: [],
   updatedAt: null,
   message: "GitHubデータは未取得です。"
 };

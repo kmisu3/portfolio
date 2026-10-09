@@ -8,6 +8,10 @@ const metricIcons = [CalendarDays, Code2, Star, GitFork];
 export function GitHubActivity() {
   const data = getGitHubData();
   const cells = contributionGrid(data.contributions);
+  const yearlyContributions = data.yearlyContributions ?? [];
+  const yearlyMax = Math.max(...yearlyContributions.map(item => item.total), 1);
+  const hasPrivateContributions = yearlyContributions.some(item => item.private > 0);
+  const numberFormat = new Intl.NumberFormat("ja-JP");
   const metrics = [
     ["年間Contributions", data.totalContributions],
     ["活動日数", data.activeDays],
@@ -48,6 +52,35 @@ export function GitHubActivity() {
         </div>
         <div className="legend" aria-label="Contribution数の凡例"><span>Less</span>{[0,1,2,3,4].map(level => <i key={level} data-level={level} />)}<span>More</span></div>
       </div>
+      {yearlyContributions.length > 0 && (
+        <figure className="yearly-card" aria-labelledby="yearly-title">
+          <figcaption className="yearly-head">
+            <div><span className="meta-label">Yearly contributions</span><h3 id="yearly-title">年ごとの活動</h3></div>
+            <div className="yearly-legend" aria-label="グラフの凡例"><span><i data-kind="public" />Public</span>{hasPrivateContributions && <span><i data-kind="private" />Private</span>}</div>
+          </figcaption>
+          <div className="yearly-scroll" tabIndex={0} aria-label="年ごとのGitHub Contributions。横方向にスクロールできます。">
+            <div className="yearly-chart" style={{ minWidth: `${Math.max(yearlyContributions.length * 72, 440)}px` }}>
+              {yearlyContributions.map(item => {
+                const barHeight = item.total > 0 ? Math.max((item.total / yearlyMax) * 100, 2) : 0;
+                const publicShare = item.total > 0 ? (item.public / item.total) * 100 : 0;
+                const privateShare = item.total > 0 ? (item.private / item.total) * 100 : 0;
+                return (
+                  <div className="yearly-column" key={item.year} role="img" aria-label={`${item.year}年: Public ${numberFormat.format(item.public)}、Private ${numberFormat.format(item.private)}、合計 ${numberFormat.format(item.total)}`}>
+                    <span className="yearly-value">{numberFormat.format(item.total)}</span>
+                    <div className="yearly-track">
+                      <div className="yearly-bar" style={{ height: `${barHeight}%` }} aria-hidden="true">
+                        {item.private > 0 && <span data-kind="private" style={{ height: `${privateShare}%` }} />}
+                        {item.public > 0 && <span data-kind="public" style={{ height: `${publicShare}%` }} />}
+                      </div>
+                    </div>
+                    <span className="yearly-year">{String(item.year).slice(-2)}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </figure>
+      )}
       <div className="github-bottom-grid">
         <div className="list-card">
           <span className="meta-label">Featured repositories</span>

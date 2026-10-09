@@ -60,6 +60,7 @@ try {
 
   let contributionDays = [];
   let totalContributions = null;
+  let yearlyContributions = [];
   if (token) {
     const to = new Date();
     const from = new Date(to);
@@ -77,6 +78,25 @@ try {
       date: day.date,
       count: day.contributionCount,
       level: contributionLevel(day.contributionCount)
+    }));
+
+    const firstYear = new Date(profile.created_at).getUTCFullYear();
+    const currentYear = to.getUTCFullYear();
+    const years = Array.from({ length: currentYear - firstYear + 1 }, (_, index) => firstYear + index);
+    const yearlyQuery = `query($login:String!,$from:DateTime!,$to:DateTime!){user(login:$login){contributionsCollection(from:$from,to:$to){restrictedContributionsCount contributionCalendar{totalContributions}}}}`;
+    yearlyContributions = await Promise.all(years.map(async (year) => {
+      const yearFrom = new Date(Date.UTC(year, 0, 1));
+      const yearTo = year === currentYear ? to : new Date(Date.UTC(year + 1, 0, 1) - 1);
+      const result = await request("https://api.github.com/graphql", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: yearlyQuery, variables: { login: username, from: yearFrom.toISOString(), to: yearTo.toISOString() } })
+      });
+      if (result.errors) throw new Error(result.errors.map((error) => error.message).join("; "));
+      const collection = result.data.user.contributionsCollection;
+      const total = collection.contributionCalendar.totalContributions;
+      const privateCount = collection.restrictedContributionsCount || 0;
+      return { year, public: Math.max(total - privateCount, 0), private: privateCount, total };
     }));
   }
 
@@ -100,6 +120,7 @@ try {
       updatedAt: repo.updated_at
     })),
     contributions: contributionDays,
+    yearlyContributions,
     updatedAt: new Date().toISOString(),
     message: contributionDays.length ? undefined : "Contributionデータは未取得です。"
   };

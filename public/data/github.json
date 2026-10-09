@@ -65,6 +65,38 @@
     }
   ],
   "contributions": [],
+  "yearlyContributions": [
+    {
+      "year": 2022,
+      "public": 375,
+      "private": 0,
+      "total": 375
+    },
+    {
+      "year": 2023,
+      "public": 2534,
+      "private": 0,
+      "total": 2534
+    },
+    {
+      "year": 2024,
+      "public": 3368,
+      "private": 0,
+      "total": 3368
+    },
+    {
+      "year": 2025,
+      "public": 1588,
+      "private": 0,
+      "total": 1588
+    },
+    {
+      "year": 2026,
+      "public": 4666,
+      "private": 0,
+      "total": 4666
+    }
+  ],
   "updatedAt": "2026-10-09T14:00:42.257Z",
   "message": "Contributionデータは未取得です。"
 }

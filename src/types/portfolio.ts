@@ -73,6 +73,13 @@ export type ContributionDay = {
   level: 0 | 1 | 2 | 3 | 4;
 };
 
+export type YearlyContribution = {
+  year: number;
+  public: number;
+  private: number;
+  total: number;
+};
+
 export type Repository = {
   name: string;
   description: string | null;
@@ -95,6 +102,7 @@ export type GitHubData = {
   topLanguages: { name: string; count: number }[];
   repositories: Repository[];
   contributions: ContributionDay[];
+  yearlyContributions: YearlyContribution[];
   updatedAt: string | null;
   message?: string;
 };
