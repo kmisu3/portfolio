@@ -1,9 +1,9 @@
-import { CalendarDays, Code2, GitFork, GitBranch, Star } from "lucide-react";
+import { CalendarDays, Code2, GitFork, GitBranch } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ExternalLink } from "@/components/ui/external-link";
 import { contributionGrid, formatUpdatedAt, getGitHubData } from "@/lib/github";
 
-const metricIcons = [CalendarDays, Code2, Star, GitFork];
+const metricIcons = [CalendarDays, Code2, GitFork];
 
 export function GitHubActivity() {
   const data = getGitHubData();
@@ -15,7 +15,6 @@ export function GitHubActivity() {
   const metrics = [
     ["年間Contributions", data.totalContributions],
     ["活動日数", data.activeDays],
-    ["合計Stars", data.totalStars],
     ["公開リポジトリ", data.publicRepos]
   ] as const;
 
@@ -88,14 +87,8 @@ export function GitHubActivity() {
           {data.repositories.length ? data.repositories.map(repo => (
             <ExternalLink key={repo.url} className="repo-row" href={repo.url}>
               <span><b>{repo.name}</b></span>
-              <span><Star size={14} /> {repo.stars}</span>
             </ExternalLink>
           )) : <p className="subtle">リポジトリデータは未取得です。</p>}
-        </div>
-        <div className="list-card">
-          <span className="meta-label">Public repo languages</span>
-          <h3>主な使用言語</h3>
-          {data.topLanguages.length ? <ul className="language-list">{data.topLanguages.map(item => <li key={item.name}><span>{item.name}</span><b>{item.count} repos</b></li>)}</ul> : <p className="subtle">言語データは未取得です。</p>}
         </div>
       </div>
     </section>
