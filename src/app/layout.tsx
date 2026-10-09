@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
+import mascot from "@/assets/mascot.jpg";
 import { portfolioConfig, siteUrl } from "@/lib/config";
 import "./globals.css";
+
+const socialImageUrl = new URL(mascot.src.replace(/^.*\/_next\//, "_next/"), siteUrl).toString();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -15,9 +18,15 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: portfolioConfig.siteTitle,
     description: portfolioConfig.siteDescription,
-    siteName: portfolioConfig.siteTitle
+    siteName: portfolioConfig.siteTitle,
+    images: [{ url: socialImageUrl, width: mascot.width, height: mascot.height, alt: "kmisu3のアイコン" }]
   },
-  twitter: { card: "summary", title: portfolioConfig.siteTitle, description: portfolioConfig.siteDescription }
+  twitter: {
+    card: "summary",
+    title: portfolioConfig.siteTitle,
+    description: portfolioConfig.siteDescription,
+    images: [socialImageUrl]
+  }
 };
 
 export const viewport: Viewport = { themeColor: "#f5f7fb", colorScheme: "light" };
