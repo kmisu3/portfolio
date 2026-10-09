@@ -3,7 +3,7 @@ import type { Project } from "@/types/portfolio";
 export const projects: Project[] = [
   {
     name: "業務システムのリプレース",
-    summary: "既存の業務システムをPythonからPHPへ段階的に移行するプロジェクトです。",
+    summary: "既存の業務システムをPythonからPHPへ段階的に移行するプロジェクト",
     period: "2026 — 継続中",
     kind: "業務案件",
     position: "Lead Engineer",
@@ -17,7 +17,7 @@ export const projects: Project[] = [
   },
   {
     name: "FAQ型AIチャットボットの開発・改善",
-    summary: "FAQ検索と生成AIを組み合わせたチャットボットの開発・改善プロジェクトです。",
+    summary: "FAQ検索と生成AIを組み合わせたチャットボットの開発・改善プロジェクト",
     period: "2025",
     kind: "業務案件",
     position: "Lead Engineer",
@@ -31,7 +31,7 @@ export const projects: Project[] = [
   },
   {
     name: "SNS自動応答システム",
-    summary: "投稿やメッセージへの自動応答を行う、イベント駆動型のサーバーレスシステムです。",
+    summary: "投稿やメッセージへの自動応答を行う、イベント駆動型のサーバーレスシステム開発",
     period: "2025",
     kind: "業務案件",
     position: "Lead Engineer",
@@ -45,7 +45,7 @@ export const projects: Project[] = [
   },
   {
     name: "ミニアプリ向けバックエンド開発",
-    summary: "スタンプカードや会員向け機能を提供するミニアプリの、バックエンドAPIとデリバリー基盤の開発です。",
+    summary: "スタンプカードや会員向け機能を提供するミニアプリの、バックエンドAPIとデリバリー基盤の開発",
     period: "2022 — 2024",
     kind: "業務案件",
     position: "Backend Engineer / Lead Engineer",
@@ -59,7 +59,7 @@ export const projects: Project[] = [
   },
   {
     name: "マルチテナントAIサービス基盤",
-    summary: "外部AIエンジンを統合し、複数顧客向けに提供するSaaS型バックエンドの新規開発です。",
+    summary: "外部AIエンジンを統合し、複数顧客向けに提供するSaaS型バックエンドの新規開発",
     period: "2023",
     kind: "業務案件",
     position: "Backend Engineer",
