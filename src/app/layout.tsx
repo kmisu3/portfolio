@@ -3,7 +3,9 @@ import mascot from "@/assets/mascot.jpg";
 import { portfolioConfig, siteUrl } from "@/lib/config";
 import "./globals.css";
 
-const socialImageUrl = new URL(mascot.src.replace(/^.*\/_next\//, "_next/"), siteUrl).toString();
+const mascotAsset = mascot as string | { src: string };
+const mascotSrc = typeof mascotAsset === "string" ? mascotAsset : mascotAsset.src;
+const socialImageUrl = new URL(mascotSrc.replace(/^.*\/_next\//, "_next/"), siteUrl).toString();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -19,7 +21,7 @@ export const metadata: Metadata = {
     title: portfolioConfig.siteTitle,
     description: portfolioConfig.siteDescription,
     siteName: portfolioConfig.siteTitle,
-    images: [{ url: socialImageUrl, width: mascot.width, height: mascot.height, alt: "kmisu3のアイコン" }]
+    images: [{ url: socialImageUrl, width: 256, height: 256, alt: "kmisu3のアイコン" }]
   },
   twitter: {
     card: "summary",
