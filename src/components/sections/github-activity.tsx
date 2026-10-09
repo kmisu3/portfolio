@@ -44,7 +44,7 @@ export function GitHubActivity() {
         })}
       </div>
       <div className="contribution-card">
-        <div className="card-title-row"><div><span className="meta-label">Contribution calendar</span><h3>直近1年間の活動</h3></div><span>{data.currentStreak == null ? "連続活動 —" : `連続活動 ${data.currentStreak}日`}</span></div>
+        <div className="card-title-row"><div><span className="meta-label">Contribution calendar</span><h3>Last 12 months</h3></div><span>{data.currentStreak == null ? "Current streak —" : `Current streak ${data.currentStreak} days`}</span></div>
         <div className="contribution-scroll" tabIndex={0} aria-label="GitHub Contributionsグラフ。横方向にスクロールできます。">
           <div className="contribution-grid" aria-hidden={data.status !== "ready"}>
             {cells.map((day, index) => <span key={`${day.date}-${index}`} data-level={day.level} title={day.date ? `${day.date}: ${day.count} contributions` : undefined} />)}
@@ -55,7 +55,7 @@ export function GitHubActivity() {
       {yearlyContributions.length > 0 && (
         <figure className="yearly-card" aria-labelledby="yearly-title">
           <figcaption className="yearly-head">
-            <div><span className="meta-label">Yearly contributions</span><h3 id="yearly-title">年ごとの活動</h3></div>
+            <div><span className="meta-label">Yearly contributions</span><h3 id="yearly-title">Yearly activity</h3></div>
             <div className="yearly-legend" aria-label="グラフの凡例"><span><i data-kind="public" />Public</span>{hasPrivateContributions && <span><i data-kind="private" />Private</span>}</div>
           </figcaption>
           <div className="yearly-scroll" tabIndex={0} aria-label="年ごとのGitHub Contributions。横方向にスクロールできます。">
