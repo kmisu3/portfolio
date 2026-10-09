@@ -3,7 +3,7 @@
 :root {
   --canvas: #f5f7fb; --paper: #fff; --ink: #18212d; --muted: #687382; --faint: #8b95a3;
   --line: #dbe1e9; --line-strong: #bac5d3; --blue: #2457d6; --blue-dark: #173e9d;
-  --blue-soft: #eaf0ff; --green: #16866f; --green-soft: #e6f5f1; --warning: #9a6700;
+  --blue-soft: #eaf0ff; --mascot-yellow: #d6a93f; --mascot-yellow-soft: #fff3d2; --warning: #9a6700;
   --shadow: 0 18px 48px rgba(28,44,70,.08);
   --font-sans: "Avenir Next", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", Meiryo, sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
@@ -32,8 +32,8 @@ h1,h2,h3,p { margin-top: 0; }
 
 main { max-width: 1180px; margin: 0 auto; padding: 0 2rem; }
 .hero { min-height: min(760px,calc(100svh - 78px)); display: grid; grid-template-columns: minmax(0,1.3fr) minmax(340px,.7fr); align-items: center; gap: clamp(3rem,5vw,4.5rem); position: relative; padding: 8rem 0 9rem; }
-.hero::before { content: ""; position: absolute; top: 0; bottom: 0; left: -2rem; width: 3px; background: linear-gradient(var(--blue) 0 38%,var(--green) 38% 52%,var(--line) 52% 100%); }
-.availability { width: fit-content; display: flex; align-items: center; gap: .6rem; margin-bottom: 2.5rem; color: var(--green); font-size: .82rem; font-weight: 700; }.availability span { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px var(--green-soft); }
+.hero::before { content: ""; position: absolute; top: 0; bottom: 0; left: -2rem; width: 3px; background: linear-gradient(var(--blue) 0 38%,var(--mascot-yellow) 38% 52%,var(--line) 52% 100%); }
+.availability { width: fit-content; display: flex; align-items: center; gap: .6rem; margin-bottom: 2.5rem; color: var(--mascot-yellow); font-size: .82rem; font-weight: 700; }.availability span { width: 8px; height: 8px; border-radius: 50%; background: var(--mascot-yellow); box-shadow: 0 0 0 5px var(--mascot-yellow-soft); }
 .hero-role { margin-bottom: 1.2rem; color: var(--blue); font: 650 .82rem/1.4 var(--font-mono); letter-spacing: .015em; }
 .hero h1 { max-width: 790px; margin-bottom: 2rem; font-size: clamp(3rem,5vw,4.45rem); line-height: 1.08; letter-spacing: -.06em; font-weight: 720; }
 .hero-intro { max-width: 670px; margin-bottom: 0; color: #4f5c6b; font-size: clamp(1rem,1.5vw,1.12rem); line-height: 2; }
