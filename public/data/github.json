@@ -1,0 +1,70 @@
+{
+  "status": "ready",
+  "username": "kmisu3",
+  "avatarUrl": "https://avatars.githubusercontent.com/u/105191969?v=4",
+  "profileUrl": "https://github.com/kmisu3",
+  "publicRepos": 7,
+  "totalStars": 0,
+  "totalContributions": null,
+  "activeDays": null,
+  "currentStreak": null,
+  "topLanguages": [
+    {
+      "name": "HTML",
+      "count": 2
+    },
+    {
+      "name": "TypeScript",
+      "count": 1
+    },
+    {
+      "name": "Blade",
+      "count": 1
+    },
+    {
+      "name": "HCL",
+      "count": 1
+    },
+    {
+      "name": "Python",
+      "count": 1
+    }
+  ],
+  "repositories": [
+    {
+      "name": "nuxt-hono",
+      "description": null,
+      "url": "https://github.com/kmisu3/nuxt-hono",
+      "stars": 0,
+      "language": "TypeScript",
+      "updatedAt": "2026-06-16T09:29:22Z"
+    },
+    {
+      "name": "issue",
+      "description": "テスト",
+      "url": "https://github.com/kmisu3/issue",
+      "stars": 0,
+      "language": null,
+      "updatedAt": "2026-05-29T07:09:10Z"
+    },
+    {
+      "name": "ai-agents",
+      "description": "AI系お試し",
+      "url": "https://github.com/kmisu3/ai-agents",
+      "stars": 0,
+      "language": "Blade",
+      "updatedAt": "2026-01-25T10:45:07Z"
+    },
+    {
+      "name": "code-review-policy",
+      "description": "github app用",
+      "url": "https://github.com/kmisu3/code-review-policy",
+      "stars": 0,
+      "language": "HTML",
+      "updatedAt": "2025-11-26T14:06:05Z"
+    }
+  ],
+  "contributions": [],
+  "updatedAt": "2026-10-09T14:00:42.257Z",
+  "message": "Contributionデータは未取得です。"
+}
