@@ -3,7 +3,7 @@ import type { Career } from "@/types/portfolio";
 export const careers: Career[] = [
   {
     period: "2022 — 現在",
-    organizationType: "受託開発企業（Webサービス）",
+    organizationType: "WEBシステム開発会社（受託開発）",
     position: "Web Engineer / Lead Engineer",
     summary: "ミニアプリ、AIチャットボット、業務システムなどのWebサービス開発",
     responsibilities: ["要件定義", "アーキテクチャ設計", "バックエンド・フロントエンド開発", "運用改善"],
@@ -14,7 +14,7 @@ export const careers: Career[] = [
   },
   {
     period: "2018 — 2021",
-    organizationType: "SES企業（業務アプリケーション開発）",
+    organizationType: "ITソリューション企業（業務アプリケーション開発）",
     position: "Application Engineer",
     summary: "金融・通信領域の業務システムで、既存機能の改修からクラウド環境向けバックエンド開発",
     responsibilities: ["設計", "バックエンド開発", "影響調査", "テスト"],
@@ -25,7 +25,7 @@ export const careers: Career[] = [
   },
   {
     period: "2016 — 2018",
-    organizationType: "SES企業（データベース基盤構築・運用）",
+    organizationType: "ITソリューション企業（データベース基盤構築・運用）",
     position: "Infrastructure Engineer",
     summary: "Oracleデータベース基盤の設計・構築・テストを担当し、リリース後の問い合わせや障害対応",
     responsibilities: ["基本設計", "詳細設計", "構築", "テスト", "運用"],
