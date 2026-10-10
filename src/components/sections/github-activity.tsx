@@ -80,17 +80,6 @@ export function GitHubActivity() {
           </div>
         </figure>
       )}
-      <div className="github-bottom-grid">
-        <div className="list-card">
-          <span className="meta-label">Featured repositories</span>
-          <h3>代表的なリポジトリ</h3>
-          {data.repositories.length ? data.repositories.map(repo => (
-            <ExternalLink key={repo.url} className="repo-row" href={repo.url}>
-              <span><b>{repo.name}</b></span>
-            </ExternalLink>
-          )) : <p className="subtle">リポジトリデータは未取得です。</p>}
-        </div>
-      </div>
     </section>
   );
 }

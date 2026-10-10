@@ -3,7 +3,7 @@ import type { Project } from "@/types/portfolio";
 export const projects: Project[] = [
   {
     name: "業務システムのリプレース",
-    summary: "既存の業務システムをPythonからPHPへ段階的に移行するプロジェクト",
+    summary: "既存の業務システムをPythonからPHPへ移行するプロジェクト",
     period: "2026 — 継続中",
     kind: "業務案件",
     position: "Lead Engineer",
