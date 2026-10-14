@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import mascot from "@/assets/mascot.jpg";
+import { CursorOrbit } from "@/components/ui/cursor-orbit";
 import { portfolioConfig, siteUrl } from "@/lib/config";
 import "./globals.css";
 
@@ -34,5 +35,5 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: "#f5f7fb", colorScheme: "light" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="ja"><body>{children}</body></html>;
+  return <html lang="ja"><body><CursorOrbit />{children}</body></html>;
 }
